@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-p", " Run:  ", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-i", "-p", " Run:  ", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *rangercmd[] = { "alacritty", "-e", "ranger" };
 static const char *browcmd[] = { "firefox" };
@@ -81,6 +81,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("~/Scripts/dmenu-files") },
 	{ ShiftMask,                    XK_m,      spawn,          SHCMD("~/Scripts/volume+") },
 	{ ShiftMask,                    XK_n,      spawn,          SHCMD("~/Scripts/volume-") },
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("~/Scripts/dmenu-screenshot") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
