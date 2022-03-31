@@ -1,0 +1,190 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #111111
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/example]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Cantarel:pixelsize=10;2
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = Font Awesome:style=Regular:pixelsize=9;1
+font-4 = Font Awesome:style=Solid:pixelsize=10;1
+font-5 = Font Awesome:pixelsize=9;1
+
+
+modules-left = ewmh separator xwindow
+modules-center = 
+modules-right = separator pulseaudio separator date
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+
+;override-redirect = true
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/ewmh]
+type = internal/xworkspaces
+
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-6 = 7;
+format = <label-state>
+label-monitor = %name%
+ 
+
+label-active = %name%
+label-active-foreground = #101010
+label-active-background = #CCCCCC
+;label-active-underline= #6790eb
+label-active-padding = 1
+
+label-occupied = %name%
+label-occupied-foreground = ##101010
+label-occupied-background = #FFFFFF
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = #9966FF
+label-urgent-background = #FFCCFF
+;label-urgent-underline = ${colors.alert}
+label-urgent-padding = 1
+ 
+label-empty = %name%
+label-empty-foreground = #ABABAB
+label-empty-padding = 1
+format-foreground = #ABABAB
+format-background = #101010
+
+[module/xwindow]
+type = internal/xwindow
+label =  %title:0:100:...%
+
+[module/separator]
+type = custom/text
+content = |
+content-padding = 0
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = %d-%m-%Y
+
+time = %H:%M
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label =  %date%, %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+label-volume =  %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 🔇  muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
