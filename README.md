@@ -3,11 +3,18 @@
 ------------------------- DWM -------------------------
 
 Patchs que uso:
+
 Fullgaps
+
 autostart
+
 rotatestack
 
-Painel: 
+systray
+
+
+Painel:
+
 Dwmblocks
 
 Buscador: Dmenu
@@ -15,6 +22,7 @@ Buscador: Dmenu
 ------------------------- i3gaps -------------------------
 
 Painel:
+
 bumblebee-status
 
 Buscador: rofi
@@ -22,6 +30,7 @@ Buscador: rofi
 ------------------------- AwesomeWm -------------------------
 
 Painel: 
+
 Wibar
 
 Buscador: rofi
@@ -29,6 +38,7 @@ Buscador: rofi
 ------------------------- Herbstluftwm ------------------------- 
 
 Painel:
+
 Polybar
 
 Buscador: rofi
