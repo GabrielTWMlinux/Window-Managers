@@ -13,6 +13,8 @@ rotatestack
 systray
 
 
+
+
 Painel:
 
 Dwmblocks
