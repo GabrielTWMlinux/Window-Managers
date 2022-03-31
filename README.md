@@ -15,33 +15,25 @@ systray
 
 
 
-Painel:
-
-Dwmblocks
+Painel: Dwmblocks
 
 Buscador: Dmenu
 
 ------------------------- i3gaps -------------------------
 
-Painel:
-
-bumblebee-status
+Painel: bumblebee-status
 
 Buscador: rofi
 
 ------------------------- AwesomeWm -------------------------
 
-Painel: 
-
-Wibar
+Painel: Wibar
 
 Buscador: rofi
 
 ------------------------- Herbstluftwm ------------------------- 
 
-Painel:
-
-Polybar
+Painel: Polybar
 
 Buscador: rofi
 
