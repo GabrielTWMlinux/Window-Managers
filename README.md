@@ -27,7 +27,10 @@ Wibar
 Buscador: rofi
 
 ------------------------- Herbstluftwm ------------------------- 
+
 Painel:
 Polybar
 
 Buscador: rofi
+
+
