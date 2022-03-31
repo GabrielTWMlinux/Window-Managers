@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 5;        /* gaps between windows */
+static const unsigned int gappx     = 13;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -20,7 +20,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -62,14 +62,14 @@ static const char *dmenucmd[] = { "dmenu_run", "-p", " Run:  ", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *rangercmd[] = { "alacritty", "-e", "ranger" };
 static const char *browcmd[] = { "firefox" };
-static const char *htocmd[] = { "alacritty", "-e", "htop" };
 static const char *nautcmd[] = { "nautilus" };
+static const char *htcmd[] = { "alacritty", "-e", "htop" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_t,      spawn,          {.v = htcmd } },
 	{ MODKEY,                       XK_f,      spawn,          {.v = rangercmd } },
-	{ MODKEY,                       XK_t,      spawn,          {.v = htocmd } },
 	{ MODKEY,                       XK_F1,     spawn,          {.v = browcmd } },
 	{ MODKEY,                       XK_F2,     spawn,          {.v = nautcmd } },
 	{ MODKEY,                       XK_x,      spawn,          SHCMD("~/Scripts/power-menudwm") },
