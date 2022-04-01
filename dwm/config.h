@@ -81,7 +81,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("~/Scripts/dmenu-files") },
 	{ ShiftMask,                    XK_m,      spawn,          SHCMD("~/Scripts/volume+") },
 	{ ShiftMask,                    XK_n,      spawn,          SHCMD("~/Scripts/volume-") },
-	{ MODKEY,                       XK_s,      spawn,          SHCMD("~/Scripts/dmenu-screenshot") },
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("sleep 1s; scrot -s ~/Imagens/Screenshots/%Y-%m-%d_$wx$h_ss.png -e 'xclip -selection clipboard -target image/png < $f'") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
