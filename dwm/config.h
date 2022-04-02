@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 13;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -77,7 +77,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      spawn,          {.v = rangercmd } },
 	{ MODKEY,                       XK_F1,     spawn,          {.v = browcmd } },
 	{ MODKEY,                       XK_F2,     spawn,          {.v = nautcmd } },
-	{ MODKEY,                       XK_x,      spawn,          SHCMD("~/Scripts/power-menudwm") },
+	{ MODKEY,                       XK_x,      spawn,          SHCMD("~/Scripts/dmenu_power") },
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("~/Scripts/dmenu-files") },
 	{ ShiftMask,                    XK_m,      spawn,          SHCMD("~/Scripts/volume+") },
 	{ ShiftMask,                    XK_n,      spawn,          SHCMD("~/Scripts/volume-") },
