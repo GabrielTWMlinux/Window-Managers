@@ -1,27 +1,27 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 8;        /* gaps between windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappx     = 28;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 1;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;     /* 0 means no systray */
-static const int showbar            = 1;     /* 0 means no bar */
+static const int showsystray        = 0;     /* 0 means no systray */
+static const int showbar            = 0;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const char *fonts[]          = { "fontawesome:size=11" };
 static const char dmenufont[]       = "fontawesome:size=11";
-static const char col_gray1[]       = "#111118";
+static const char col_gray1[]       = "#080808";
 static const char col_gray2[]       = "#000000";
-static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray3[]       = "#555555";
 static const char col_gray4[]       = "#ffffff";
 static const char col_cyan[]        = "#9E5547";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_gray4, col_gray2, col_gray2 },
+	[SchemeSel]  = { col_gray2, col_gray4, col_gray3 },
 };
 
 /* tagging */
@@ -82,9 +82,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          SHCMD("~/Scripts/dmenu-files") },
 	{ ShiftMask,                    XK_m,      spawn,          SHCMD("~/Scripts/volume+") },
 	{ ShiftMask,                    XK_n,      spawn,          SHCMD("~/Scripts/volume-") },
+	{ ShiftMask,                    XK_d,      spawn,          SHCMD("~/Scripts/time") },
+	{ ShiftMask,                    XK_b,      spawn,          SHCMD("~/Scripts/ram") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("sleep 1s; scrot -s ~/Imagens/Screenshots/%Y-%m-%d_$wx$h_ss.png -e 'xclip -selection clipboard -target image/png < $f'") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY|ShiftMask,             XK_p,      togglebar,      {0} },
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
