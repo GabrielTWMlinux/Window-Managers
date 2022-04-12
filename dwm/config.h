@@ -8,7 +8,7 @@ static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows sel
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 1;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 0;     /* 0 means no systray */
+static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 0;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const char *fonts[]          = { "fontawesome:size=11" };
@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-i", "-p", " Run:  ", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-i", "-p", " Run  ", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *rangercmd[] = { "alacritty", "-e", "ranger" };
 static const char *browcmd[] = { "firefox", NULL };
@@ -84,6 +84,7 @@ static Key keys[] = {
 	{ ShiftMask,                    XK_n,      spawn,          SHCMD("~/Scripts/volume-") },
 	{ ShiftMask,                    XK_d,      spawn,          SHCMD("~/Scripts/time") },
 	{ ShiftMask,                    XK_b,      spawn,          SHCMD("~/Scripts/ram") },
+	{ MODKEY,                       XK_w,      spawn,          SHCMD("~/Scripts/windowlocal") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("sleep 1s; scrot -s ~/Imagens/Screenshots/%Y-%m-%d_$wx$h_ss.png -e 'xclip -selection clipboard -target image/png < $f'") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_p,      togglebar,      {0} },
