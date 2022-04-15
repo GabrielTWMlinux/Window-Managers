@@ -7,6 +7,8 @@ static const Block blocks[] = {
 
 	{"  ", "~/Scripts/ram-dwm",			5,		0},
 	
+	{"  ", "~/Scripts/cpu-dwm",			5,		0},
+
 	{"  ", "date '+%d %b %Y, %a %H:%M '",		30,		0},
 };
 
