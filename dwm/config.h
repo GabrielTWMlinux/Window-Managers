@@ -15,16 +15,17 @@ static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
 static const char *fonts[]          = { "fontawesome:size=11" };
 static const char dmenufont[]       = "fontawesome:size=11";
-static const char col_gray1[]       = "#080808";
+static const char col_gray1[]       = "#111118";
 static const char col_gray2[]       = "#000000";
 static const char col_gray3[]       = "#D0D0D0";
 static const char col_gray4[]       = "#FFFFFF";
 static const char col_gray5[]       = "#9E5547";
 static const char col_gray6[]	    = "#345e81";	
+static const char col_gray7[]	    = "#ffae00";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_gray5, col_gray5 },
+	[SchemeSel]  = { col_gray4, col_gray6, col_gray6 },
 };
 
 /* tagging */
