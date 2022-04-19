@@ -21,22 +21,12 @@ Painel: Dwmblocks
 
 Buscador: Dmenu
 
-------------------------- i3gaps -------------------------
-
-Painel: bumblebee-status
-
-Buscador: rofi
 
 ------------------------- AwesomeWm -------------------------
 
-Painel: Wibar
+Sem painel
 
 Buscador: rofi
 
-------------------------- Herbstluftwm ------------------------- 
-
-Painel: Polybar
-
-Buscador: rofi
 
 
