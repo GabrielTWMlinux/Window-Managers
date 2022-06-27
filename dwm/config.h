@@ -6,7 +6,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 13;        /* gaps between windows */
+static const unsigned int gappx     = 11;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
@@ -69,7 +69,6 @@ static const char *browcmd[] = { "firefox", NULL };
 static const char *nautcmd[] = { "nautilus", NULL };
 static const char *htcmd[] = { "alacritty", "-e", "htop" };
 
-#include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -77,13 +76,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      spawn,          {.v = rangercmd } },
 	{ MODKEY,                       XK_F1,     spawn,          {.v = browcmd } },
 	{ MODKEY,                       XK_F2,     spawn,         {.v = nautcmd } },
-	{ MODKEY,                       XK_x,      spawn,          SHCMD("~/Scripts/dmenu_power") },
-	{ MODKEY,                       XK_r,      spawn,          SHCMD("~/Scripts/dmenu-files") },
-	{ ShiftMask,                    XK_m,      spawn,          SHCMD("~/Scripts/volume+") },
-	{ ShiftMask,                    XK_n,      spawn,          SHCMD("~/Scripts/volume-") },
-	{ ShiftMask,                    XK_d,      spawn,          SHCMD("~/Scripts/time") },
-	{ ShiftMask,                    XK_b,      spawn,          SHCMD("~/Scripts/ram") },
-	{ MODKEY,                       XK_w,      spawn,          SHCMD("~/Scripts/windowlocal") },
+	{ MODKEY,                       XK_x,      spawn,          SHCMD("~/.config/Scripts/dmenu_power") },
+	{ MODKEY,                       XK_r,      spawn,          SHCMD("~/.config/Scripts/dmenu-files") },
+	{ ShiftMask,                    XK_m,      spawn,          SHCMD("~/.config/Scripts/volume+") },
+	{ ShiftMask,                    XK_n,      spawn,          SHCMD("~/.config/Scripts/volume-") },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("sleep 1s; scrot -s ~/Imagens/Screenshots/%Y-%m-%d_$wx$h_ss.png -e 'xclip -selection clipboard -target image/png < $f'") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_p,      togglebar,      {0} },
@@ -91,8 +87,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Left,   focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY|ShiftMask,     	XK_Left,   movestack,    {.i = +1 } },
-	{ MODKEY|ShiftMask,     	XK_Right,  movestack,    {.i = -1 } },
+	{ MODKEY|ShiftMask,     	XK_Left,   rotatestack,    {.i = +1 } },
+	{ MODKEY|ShiftMask,     	XK_Right,  rotatestack,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_Left,   setmfact,       {.f = -0.05} },
 	{ MODKEY|ControlMask,           XK_Right,  setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
@@ -142,3 +138,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
