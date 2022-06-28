@@ -14,6 +14,7 @@ systray
 
 actualfullscreen
 
+hide vacant tags
 
 
 
