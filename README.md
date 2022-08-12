@@ -4,18 +4,17 @@
 
 Patchs que uso:
 
-uselessgap
+actualfullscreen
 
 autostart
 
+hide vacant
+
+restartsig
+
 rotatestack
 
-systray
-
-actualfullscreen
-
-hide vacant tags
-
+uselessgap
 
 
 Painel: Dwmblocks
