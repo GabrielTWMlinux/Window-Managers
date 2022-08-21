@@ -8,11 +8,15 @@ actualfullscreen
 
 autostart
 
+bar height
+
 hide vacant
 
 restartsig
 
 rotatestack
+
+systray
 
 uselessgap
 
