@@ -9,13 +9,29 @@ floating_modifier $mod
 
 
 
+##################################
+############ MONITOR #############
+##################################
+
+set $rm HDMI-0
+set $lm DVI-D-0
+
+workspace 1 output $rm
+workspace 2 output $rm
+workspace 3 output $rm
+workspace 4 output $rm
+workspace 5 output $rm
+workspace 6 output $lm
+workspace 7 output $lm
+workspace 8 output $lm
+workspace 9 output $lm
 
 
 ##################################
 ############# FONTS ##############
 ##################################
 
-font pango:DejaVu Sans Mono 8
+font pango:SymbolaRegular 9
 
 
 
@@ -23,24 +39,21 @@ font pango:DejaVu Sans Mono 8
 ########## KEY BINDINGS ##########
 ##################################
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec st
 bindsym $mod+q kill
-bindsym $mod+f exec alacritty -e ranger
-bindsym $mod+h exec alacritty -e htop
-bindsym $mod+p exec rofi -show drun
-bindsym $mod+r exec /home/gabriel/Scripts/rofi-files
-bindsym $mod+s exec /home/gabriel/Scripts/rofi-search
-bindsym $mod+w exec /home/gabriel/Scripts/windowlocation
-bindsym $mod+x exec /home/gabriel/Scripts/power-menu.sh
+bindsym $mod+f exec st -e ranger
+bindsym $mod+h exec st -e htop
+bindsym $mod+p exec dmenu_run -i -p 'Apps '
+bindsym Shift+r exec /home/gabriel/.config/Scripts/dmenu/dmenu-files
+bindsym Shift+x exec /home/gabriel/.config/Scripts/dmenu/dmenu-power
+bindsym Shift+e exec /home/gabriel/.config/Scripts/dmenu/dmenu-emojis
+bindsym Shift+p exec /home/gabriel/.config/Scripts/dmenu/dmenu-src
 
-bindsym Shift+b exec /home/gabriel/Scripts/ram
-bindsym Shift+d exec /home/gabriel/Scripts/time
-bindsym Shift+m exec /home/gabriel/Scripts/volume+
-bindsym Shift+n exec /home/gabriel/Scripts/volume-
-bindsym Shift+u exec /home/gabriel/Scripts/Void-Updates
+bindsym Shift+m exec /home/gabriel/.config/Scripts/notify/volume+
+bindsym Shift+n exec /home/gabriel/.config/Scripts/notify/volume-
 
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec nautilus
+bindsym $mod+F2 exec pcmanfm
 
 
 
@@ -114,20 +127,16 @@ bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 
 
  bar {  
- 	font pango: Inconsolata for Powerline 10
- 	position top
-        status_command ~/.config/i3/bumblebee-status/bumblebee-status \
-	-m title amixer datetime \
-	-p datetime.format="%d %b %Y, %a %H:%M" \
-	-t nord-colorful
+ 	position bottom
+        status_command i3blocks
   colors { 
-  	 background #111118
+  	 background #16161E
 	 statusline #ffffff
 	 separator #bbbbbb
 
-	 focused_workspace  #6a89a2 #6a89a2 #00000
-	 active_workspace   #6a89a2 #6a89a2 #000000
-	 inactive_workspace #111118 #111118 #FFFFFF
+	 focused_workspace  #345e81 #24415a #ffffff
+	 active_workspace   #345e81 #24415a #ffffff
+	 inactive_workspace #16161E #16161E #FFFFFF
 	 urgent_workspace   #C10004 #900000 #FFFFFF
 	 }
  }
@@ -142,9 +151,9 @@ bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
 ###################################
 
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 new_window 1pixel
-client.focused #cccccc #cccccc #cccccc #cccccc   #cccccc
+client.focused #5c7e9a #5c7e9a #5c7e9a #5c7e9a   #5c7e9a
 
 
 
@@ -153,7 +162,7 @@ client.focused #cccccc #cccccc #cccccc #cccccc   #cccccc
 ############## GAPS ##############
 ##################################
 
-gaps inner 20
+gaps inner 12
 gaps outer 0
 
 
@@ -171,3 +180,4 @@ exec --no-startup-id numlockx on
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id "picom --config /home/gabriel/.config/picom/picom.conf"
 exec --no-startup-id polkit-xfce-authentication-agent-1
+exec --no-startup id xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --primary --mode 2560x1080 --pos 1920x0 --rotate normal --output DP-0 --off --output DP-1 --off 
